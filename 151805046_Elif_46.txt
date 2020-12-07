@@ -1,0 +1,9 @@
+Inﬁnite recursion
+If a recursion never reaches a base case, it goes on making recursive calls forever, and the program never terminates. This is known as inﬁnite recursion, and it is generally not a good idea. Here is a minimal program with an inﬁnite recursion:
+def recurse(): recurse() Inmostprogrammingenvironments,aprogramwithinﬁniterecursiondoesnotreallyrun forever. Python reports an error message when the maximum recursion depth is reached:
+File "<stdin>", line 2, in recurse File "<stdin>", line 2, in recurse File "<stdin>", line 2, in recurse 
+File "<stdin>", line 2, in recurse RuntimeError: Maximum recursion depth exceeded Thistracebackisalittlebiggerthantheonewesawinthepreviouschapter. Whentheerror occurs, there are 1000 recurse frames on the stack!
+5.11 Keyboard input
+The programs we have written so far are a bit rude in the sense that they accept no input from the user. They just do the same thing every time.
+Python 2 provides a built-in function called raw_input that gets input from the keyboard. InPython3,itiscalledinput. Whenthisfunctioniscalled,theprogramstopsandwaitsfor the user to type something. When the user presses Return or Enter, the program resumes and raw_input returns what the user typed as a string.
+>>> text = raw_input() What are you waiting for? >>> print text What are you waiting for?
